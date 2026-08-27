@@ -1,0 +1,461 @@
+{
+  "fails": [],
+  "results": [
+    {
+      "vp": "desktop",
+      "view": "tour",
+      "s1": {
+        "top": 0,
+        "y": 579,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 829,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 897,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "preparation",
+      "s1": {
+        "top": 0,
+        "y": 4803,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 5053,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 4934,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "packing",
+      "s1": {
+        "top": 0,
+        "y": 901,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 901,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 901,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "tuning",
+      "s1": {
+        "top": 0,
+        "y": 1051,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 1301,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 1462,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "facts",
+      "s1": {
+        "top": 0,
+        "y": 1737,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 1987,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2084,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "praxis",
+      "s1": {
+        "top": 0,
+        "y": 3844,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 3844,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 3768,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "emergency",
+      "s1": {
+        "top": 0,
+        "y": 1917,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2167,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2247,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "tour",
+      "s1": {
+        "top": 0,
+        "y": 4082,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 4332,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 4431,
+        "navScroll": 174
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "preparation",
+      "s1": {
+        "top": 0,
+        "y": 8995,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 9245,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 9178,
+        "navScroll": 215
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "packing",
+      "s1": {
+        "top": 0,
+        "y": 2025,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2025,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2025,
+        "navScroll": 311
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "tuning",
+      "s1": {
+        "top": 0,
+        "y": 2175,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2425,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2431,
+        "navScroll": 61
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "facts",
+      "s1": {
+        "top": 0,
+        "y": 2581,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2831,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2926,
+        "navScroll": 226
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "praxis",
+      "s1": {
+        "top": 0,
+        "y": 8842,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 8842,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 8745,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "emergency",
+      "s1": {
+        "top": 0,
+        "y": 3995,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 4245,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 4312,
+        "navScroll": 172
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "tour",
+      "s1": {
+        "top": 0,
+        "y": 8207,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 8457,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 8690,
+        "navScroll": 134
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "preparation",
+      "s1": {
+        "top": 0,
+        "y": 9027,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 9277,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 9210,
+        "navScroll": 175
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "packing",
+      "s1": {
+        "top": 0,
+        "y": 1788,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 1788,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 1788,
+        "navScroll": 271
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "tuning",
+      "s1": {
+        "top": 0,
+        "y": 1938,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2188,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2328,
+        "navScroll": 21
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "facts",
+      "s1": {
+        "top": 0,
+        "y": 2542,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 2792,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 2856,
+        "navScroll": 186
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "praxis",
+      "s1": {
+        "top": 0,
+        "y": 8200,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 8200,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 8058,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "emergency",
+      "s1": {
+        "top": 0,
+        "y": 3328,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 3578,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 3645,
+        "navScroll": 132
+      }
+    },
+    {
+      "vp": "desktop",
+      "view": "wartung",
+      "s1": {
+        "top": 0,
+        "y": 7691,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 7941,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 8007,
+        "navScroll": 0
+      }
+    },
+    {
+      "vp": "iphone",
+      "view": "wartung",
+      "s1": {
+        "top": 0,
+        "y": 14453,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 14703,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 14834,
+        "navScroll": 546
+      }
+    },
+    {
+      "vp": "iphone-max",
+      "view": "wartung",
+      "s1": {
+        "top": 0,
+        "y": 27913,
+        "x": 0
+      },
+      "s2": {
+        "top": 0,
+        "y": 28163,
+        "x": 0
+      },
+      "click": {
+        "x": 0,
+        "y": 28238,
+        "navScroll": 506
+      }
+    }
+  ]
+}

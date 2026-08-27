@@ -1,0 +1,87 @@
+{
+  "schema": "northstar.ride-analysis",
+  "schema_version": "1.0",
+  "created_at": "2026-08-31T18:30:00+02:00",
+  "day": 1,
+  "date": "2026-08-31",
+  "variant": "I",
+  "source": {
+    "app": "Specialized",
+    "fit_filename": "example-day-01.fit",
+    "fit_sha256": null,
+    "analyzed_by": "ChatGPT",
+    "notes": "Beispieldatei – keine realen Nutzerdaten."
+  },
+  "quality": {
+    "status": "verified",
+    "confidence": 0.94,
+    "verified_fields": [
+      "route.distance_km",
+      "route.ascent_m",
+      "route.active_time_s",
+      "battery.start_pct",
+      "battery.end_pct",
+      "battery.consumed_wh",
+      "performance.avg_hr_bpm",
+      "performance.avg_rider_power_w"
+    ]
+  },
+  "route": {
+    "distance_km": 45.8,
+    "ascent_m": 1210,
+    "descent_m": 1180,
+    "active_time_s": 12120,
+    "elapsed_time_s": 15180,
+    "avg_speed_kmh": 13.6,
+    "max_speed_kmh": 52.1
+  },
+  "battery": {
+    "start_pct": 100,
+    "end_pct": 43,
+    "charge_gain_pct": 0,
+    "consumed_wh": 365,
+    "useful_capacity_wh": 641,
+    "checkpoints": []
+  },
+  "performance": {
+    "avg_hr_bpm": 126,
+    "max_hr_bpm": 153,
+    "avg_rider_power_w": 119,
+    "max_rider_power_w": 421,
+    "avg_motor_power_w": 171,
+    "max_motor_power_w": 512,
+    "support": {
+      "eco_time_s": 7600,
+      "trail_time_s": 2500,
+      "turbo_time_s": 120,
+      "off_time_s": 1900
+    }
+  },
+  "conditions": {
+    "weather": "wechselnd bewölkt, einzelne Schauer",
+    "surface": "überwiegend Forstweg und Trail, teilweise nass",
+    "temperature_note": "kühl auf der Höhe",
+    "wind_note": "böig am Übergang",
+    "rider_note": null
+  },
+  "model": {
+    "predicted_wh_before": 337,
+    "deviation_pct": 8.3,
+    "calibration_factor_day": 1.08,
+    "calibration_weight": 1.0,
+    "recommended_learning_factor_after": 1.04
+  },
+  "analysis": {
+    "summary": "Der reale Verbrauch lag moderat über der Prognose. Der technische Anstieg und der höhere Trail-Anteil erklären den größten Teil der Abweichung.",
+    "causes": [
+      "mehr Trail-Unterstützung als im Basismodell",
+      "nasser Untergrund",
+      "mehrere technische Beschleunigungsphasen"
+    ],
+    "observations": [
+      "Herzfrequenz und Fahrerleistung blieben über die aktive Fahrzeit stabil."
+    ],
+    "next_day_action": "Für Tag 2 die Verbrauchsprognose leicht anheben, die 25-%-Zielreserve aber unverändert beibehalten.",
+    "calibration_note": "Vollständige Fahrt; gute Datenqualität. Geeignet für die Wochenkalibrierung."
+  }
+}

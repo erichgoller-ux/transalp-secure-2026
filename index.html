@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#123f36" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Transalp" name="apple-mobile-web-app-title"/>
+<link href="./manifest.webmanifest" rel="manifest"/>
+<link href="./icon-192.png" rel="apple-touch-icon"/>
+<script src="./sync-config.js"></script>
+<title>Transalp 2026 · Secure Offline</title>
+<style>
+:root{--green:#123f36;--lime:#a7cb35;--paper:#f4f1e8;--card:#fffdf7;--ink:#173d36;--muted:#61706c;--line:#d9d5c8;--amber:#d99a24;--red:#c94c3c}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}.shell{min-height:100%;display:grid;grid-template-rows:auto 1fr}
+.topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:.55rem;padding:calc(.6rem + env(safe-area-inset-top)) .8rem .6rem;background:rgba(18,63,54,.98);color:#fff;border-bottom:1px solid rgba(255,255,255,.13)}
+.brand{font-weight:900;margin-right:auto;display:flex;align-items:center;gap:.42rem;white-space:nowrap}.quickjump{padding-left:.62rem;padding-right:.62rem}.versiontag{font-size:.58rem;font-weight:800;letter-spacing:.03em;color:#c8d8d3;border-left:1px solid rgba(255,255,255,.25);padding-left:.42rem}.navbtn,.iconbtn{border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;padding:.48rem .68rem;font-weight:850;cursor:pointer}.navbtn.active{background:var(--lime);color:var(--green);border-color:var(--lime)}.iconbtn{min-width:2.5rem}.dbbtn{font-size:.72rem;letter-spacing:.03em;padding-inline:.62rem}
+.stage{min-height:0;position:relative;width:100%;max-width:100%;overflow:hidden}.appframe{display:none;width:1px;min-width:100%;max-width:100%;inline-size:1px;min-inline-size:100%;max-inline-size:100%;height:calc(100dvh - 60px);border:0;background:var(--paper);margin:0;padding:0;box-sizing:border-box}.appframe.active{display:block}
+.lock{min-height:calc(100dvh - 60px);display:grid;place-items:center;padding:1.2rem}.lock-card{width:min(620px,100%);padding:1.3rem;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:0 14px 34px rgba(24,52,46,.10)}.eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#3c796b}.lock h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1;margin:.45rem 0}.lock p{color:var(--muted)}
+.code{width:100%;padding:.8rem .9rem;border:1px solid #bbc8c2;border-radius:12px;background:#fff;font-size:1rem}.row{display:flex;align-items:center;gap:.55rem;margin:.75rem 0}.unlockbtn{width:100%;border:0;border-radius:999px;padding:.75rem 1rem;background:var(--green);color:#fff;font-weight:900;cursor:pointer}.msg{margin-top:.7rem;padding:.65rem .75rem;border-radius:11px;background:#edf3ec;font-size:.8rem;color:#36574f}.msg.error{background:#fae9e6;color:#8b382d}
+.sheet{position:fixed;z-index:300;inset:0;display:none;place-items:end center;background:rgba(8,25,21,.44)}.sheet.open{display:grid}.sheet-card{width:min(680px,100%);max-height:82dvh;overflow:auto;padding:1.2rem 1rem calc(1.2rem + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;background:var(--card)}.sheet h2{margin:.2rem 0}.actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}.action{border:0;border-radius:999px;padding:.58rem .75rem;background:var(--green);color:#fff;font-weight:850;cursor:pointer}.action.secondary{background:#fff;color:var(--green);border:1px solid #abc0b7}.micro{color:var(--muted);font-size:.78rem}.statusline{display:flex;align-items:center;gap:.5rem;margin:.75rem 0}.dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--amber)}.dot.ok{background:#4d9a75}
+@media(max-width:640px){.brand span{display:none}.versiontag{font-size:.54rem;padding-left:.32rem}.navbtn{padding:.45rem .55rem;font-size:.78rem}.topbar{gap:.35rem}}
+
+.syncpill{
+  flex:0 0 auto;
+  min-width:3.5rem;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:999px;
+  padding:.38rem .55rem;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.02em;
+  color:#fff;
+  background:rgba(255,255,255,.08);
+}
+.syncpill.ok{background:rgba(167,203,53,.18);border-color:rgba(167,203,53,.55);color:#dff58e}
+.syncpill.offline{background:rgba(217,154,36,.16);border-color:rgba(217,154,36,.55);color:#ffd996}
+.syncpill.pending{background:rgba(255,255,255,.12);color:#fff}
+.syncpill.error{background:rgba(201,76,60,.16);border-color:rgba(201,76,60,.55);color:#ffb6ad}
+@media(max-width:480px){.syncpill{min-width:2.7rem;padding:.34rem .42rem;font-size:.62rem}}
+
+</style>
+<style id="topbar-v17">
+.topbar{gap:.65rem;padding-right:.55rem}.top-actions{display:flex;align-items:center;gap:.42rem;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.top-actions::-webkit-scrollbar{display:none}.top-actions .navbtn,.top-actions .syncpill,.top-actions .iconbtn{flex:0 0 auto}.top-actions .quickjump{background:rgba(255,255,255,.04);font-size:.72rem;padding:.42rem .58rem}.top-actions .emergencyjump{border-color:rgba(255,183,164,.55);color:#ffd5ca}
+@media(max-width:640px){.topbar{padding-left:.55rem}.brand{flex:0 0 auto}.versiontag{display:none}.top-actions .navbtn{font-size:.72rem;padding:.42rem .52rem}.top-actions .quickjump{font-size:.68rem}}
+</style>
+<style id="main-views-v28">
+.top-actions{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.top-actions::-webkit-scrollbar{display:none}
+@media(max-width:640px){
+  .top-actions .navbtn{font-size:.7rem;padding:.4rem .5rem}
+  .top-actions .quickjump{font-size:.66rem;padding-inline:.48rem}
+}
+</style>
+
+<style id="nav-contrast-v29">
+.top-actions .navbtn.active,
+.top-actions .quickjump.active,
+.top-actions button.active{
+  background:#a8cf2d !important;
+  color:#173f35 !important;
+  border-color:#a8cf2d !important;
+}
+.top-actions .navbtn.active *,
+.top-actions .quickjump.active *{color:#173f35 !important}
+.top-actions .emergencyjump.active{
+  background:#f3ddd4 !important;
+  color:#7b3429 !important;
+  border-color:#c98977 !important;
+}
+</style>
+
+
+
+<style id="responsive-shell-v51">
+html,body{width:100%;height:100%;margin:0;max-width:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+.topbar{flex:0 0 auto;width:100%;min-width:0;max-width:100%;box-sizing:border-box;overflow:hidden}
+.stage{flex:1 1 auto;width:100%;min-width:0;max-width:100%;min-height:0;overflow:hidden;position:relative}
+.appframe{display:none;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;border:0;margin:0;padding:0;box-sizing:border-box;background:var(--paper)}
+.appframe.active{display:block}
+.top-actions{min-width:0;max-width:100%}
+.top-actions>*{flex:0 0 auto}
+@media(max-width:760px),(pointer:coarse){
+  .topbar{gap:.45rem;padding-left:max(.55rem,env(safe-area-inset-left));padding-right:max(.55rem,env(safe-area-inset-right))}
+  .brand{flex:0 0 auto;margin-right:0!important}
+  .top-actions{flex:1 1 0;width:0;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;touch-action:auto;overscroll-behavior-x:contain;scrollbar-width:none}
+  .top-actions::-webkit-scrollbar{display:none}
+}
+@media(pointer:fine){
+  .top-actions{overflow-x:visible!important;overflow-y:visible!important;touch-action:auto!important;overscroll-behavior:auto!important}
+}
+</style>
+
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<div class="brand">⛰ <span>Transalp 2026</span><small class="versiontag">v64</small></div>
+<div aria-label="Globale Navigation" class="top-actions"><button class="navbtn" id="tourBtn" title="Tagesetappen, FIT-Nacharbeit und Scorecard" type="button">Tour</button><button class="navbtn" id="prepBtn" title="Tourüberblick, Guides, Checklisten und finales Setup" type="button">Vorbereitung</button><button class="navbtn" id="packingBtn" title="Pack- und Gepäcklisten" type="button">Gepäck</button><button class="navbtn" id="tuningBtn" title="Kennlinien, Fahrwerk, Reifen und Verbrauchsmodell" type="button">Tuning</button><button class="navbtn" id="maintBtn" title="Wartungsplan" type="button">Wartung</button><button class="navbtn quickjump" id="factsBtn" title="Daten &amp; Fakten" type="button">Daten</button><button class="navbtn quickjump" id="praxisBtn" title="Praxishilfe" type="button">Tipps</button><button class="navbtn quickjump emergencyjump" id="emergencyBtn" title="Notfall &amp; Assistance" type="button">Notfall</button><span class="syncpill local" id="syncPill" title="Datensynchronisation">Lokal</span><button aria-label="Lokale Datenbank und Sicherung" class="iconbtn dbbtn" id="dataBtn" title="Lokale Datenbank &amp; Sicherung" type="button">DB</button><button class="iconbtn" id="lockBtn" title="Sperren" type="button">⌁</button></div></header>
+<main class="stage">
+<section class="lock" id="lockView">
+<div class="lock-card">
+<div class="eyebrow">Verschlüsselte Offline-App</div>
+<h1>Transalp entsperren</h1>
+<p>Tour, Hotels, persönliche Assistance und Wartungsplan liegen auf dem Server ausschließlich AES‑256‑GCM-verschlüsselt. Die Entschlüsselung erfolgt nur auf diesem Gerät.</p>
+<label for="code"><strong>Entsperrcode</strong></label>
+<input autocapitalize="none" autocomplete="current-password" class="code" id="code" placeholder="XXXX-XXXXX-XXXXX-XXXXX" spellcheck="false" type="password"/>
+<label class="row"><input id="remember" type="checkbox"/><span>Code nur auf diesem iPhone merken</span></label>
+<button class="unlockbtn" id="unlockBtn" type="button">Offline-App entsperren</button>
+<div class="msg" id="unlockMsg">Nach dem ersten vollständigen Laden funktioniert die App auch im Flugmodus.</div>
+</div>
+</section>
+<iframe aria-label="Northstar Transalp Tour- und Wartungsinhalt" class="appframe" id="frame" title=""></iframe>
+</main>
+</div>
+<div aria-modal="true" class="sheet" id="sheet" role="dialog">
+<div class="sheet-card">
+<h2>Datenbank &amp; Sicherung</h2>
+<p class="micro">Alle Tour-, Wartungs- und Baseline-Daten einschließlich der komprimierten Rückbau-Bilder liegen lokal in IndexedDB und funktionieren offline. Das grüne ✓ in der Kopfzeile zeigt den verschlüsselten Northstar-Cloud-Sync. Die JSON-Gesamtsicherung ist die zusätzliche Notfallsicherung; der Entsperrcode ist nicht enthalten.</p>
+<div class="statusline"><span class="dot" id="dot"></span><strong id="storageStatus">Lokalen Speicher prüfen …</strong></div>
+<div class="actions">
+<button class="action" id="exportAll" type="button">Gesamtsicherung JSON</button>
+<button class="action secondary" id="importAll" type="button">JSON wiederherstellen</button>
+<button class="action secondary" id="forgetCode" type="button">Gemerkten Code löschen</button>
+<button class="action secondary" id="closeSheet" type="button">Schließen</button>
+<input accept=".json,application/json" hidden="" id="backupFile" type="file"/>
+</div>
+<div class="msg" id="dataMsg">JSON ist nur die zusätzliche Notfallsicherung. Im normalen Betrieb speichern IndexedDB und Northstar-Sync automatisch.</div>
+</div>
+</div>
+<script>
+(async()=>{
+  const rememberedKey="transalp-secure-unlock-v9";
+  const DB="levo-transalp-2026-offline", STORE="kv";
+  const allowed=["levo-transalp-2026:","levo-service-v1:"];
+  let cryptoMeta=null, derivedKey=null, db=null, current=null, currentView=null;
+
+  const decoded=new Map();
+
+  // Local-first encrypted sync (v9)
+  const SYNC_CFG=window.TRANSALP_SYNC_CONFIG||{};
+  const SYNC_PREFIXES=["levo-transalp-2026:","levo-service-v1:"];
+  const SYNC_EXCLUDE_PREFIXES=["levo-transalp-2026:weather:"];
+  let syncKey=null, syncId=null, syncTokenHash=null, syncTimer=null, syncBusy=false, syncReady=false;
+  let lastFullPull=0;
+  const textEncoder=new TextEncoder(), textDecoder=new TextDecoder();
+
+  function setSyncState(state,label,title=""){
+    const el=$("syncPill"); if(!el)return;
+    el.className="syncpill "+state; el.textContent=label; if(title)el.title=title;
+  }
+  function isSyncableKey(key){
+    return SYNC_PREFIXES.some(p=>key.startsWith(p)) && !SYNC_EXCLUDE_PREFIXES.some(p=>key.startsWith(p));
+  }
+  function bytesToB64(bytes){
+    let s=""; bytes.forEach(b=>s+=String.fromCharCode(b)); return btoa(s);
+  }
+  function b64ToBytes(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0))}
+  function b64url(bytes){return bytesToB64(bytes).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+  async function sha256Bytes(text){return new Uint8Array(await crypto.subtle.digest("SHA-256",textEncoder.encode(text)))}
+  async function deriveSyncContext(pass){
+    const idBytes=await sha256Bytes("transalp-sync-id-v1:"+pass);
+    const tokenBytes=await sha256Bytes("transalp-sync-token-v1:"+pass);
+    syncId=b64url(idBytes.slice(0,18));
+    syncTokenHash=b64url(tokenBytes);
+    const mat=await crypto.subtle.importKey("raw",textEncoder.encode(pass),"PBKDF2",false,["deriveKey"]);
+    syncKey=await crypto.subtle.deriveKey(
+      {name:"PBKDF2",salt:textEncoder.encode("transalp-sync-encryption-v1"),iterations:180000,hash:"SHA-256"},
+      mat,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]
+    );
+    syncReady=true;
+  }
+  async function encryptSyncValue(value){
+    const iv=crypto.getRandomValues(new Uint8Array(12));
+    const data=textEncoder.encode(String(value));
+    const ct=new Uint8Array(await crypto.subtle.encrypt({name:"AES-GCM",iv},syncKey,data));
+    return {iv:bytesToB64(iv),ciphertext:bytesToB64(ct)};
+  }
+  async function decryptSyncValue(iv,ciphertext){
+    const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64ToBytes(iv)},syncKey,b64ToBytes(ciphertext));
+    return textDecoder.decode(plain);
+  }
+  function syncConfigured(){
+    return !!(SYNC_CFG.enabled && SYNC_CFG.url && SYNC_CFG.anonKey &&
+      !String(SYNC_CFG.url).includes("YOUR-") && !String(SYNC_CFG.anonKey).includes("YOUR_"));
+  }
+  function rpcUrl(name){return String(SYNC_CFG.url).replace(/\/$/,"")+"/rest/v1/rpc/"+name}
+  async function rpc(name,body){
+    const r=await fetch(rpcUrl(name),{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":SYNC_CFG.anonKey,
+        "Authorization":"Bearer "+SYNC_CFG.anonKey
+      },
+      body:JSON.stringify(body),
+      cache:"no-store"
+    });
+    if(!r.ok)throw new Error("Sync HTTP "+r.status+" "+await r.text());
+    if(r.status===204)return null;
+    const t=await r.text(); return t?JSON.parse(t):null;
+  }
+  function allSyncRows(){
+    return new Promise((res,rej)=>{
+      const tx=db.transaction(STORE,"readonly"),req=tx.objectStore(STORE).getAll();
+      req.onsuccess=()=>res((req.result||[]).filter(r=>isSyncableKey(r.key)));
+      req.onerror=()=>rej(req.error);
+    });
+  }
+  function getSyncRow(key){
+    return new Promise((res,rej)=>{
+      const req=db.transaction(STORE,"readonly").objectStore(STORE).get(key);
+      req.onsuccess=()=>res(req.result||null); req.onerror=()=>rej(req.error);
+    });
+  }
+  function putSyncRow(row){
+    return new Promise((res,rej)=>{
+      const tx=db.transaction(STORE,"readwrite");
+      tx.objectStore(STORE).put(row);
+      tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error);
+    });
+  }
+  async function ensureTimestamps(rows){
+    let changed=false;
+    for(const row of rows){
+      if(!row.updatedAt){
+        row.updatedAt=new Date(0).toISOString();
+        await putSyncRow(row); changed=true;
+      }
+    }
+    return changed;
+  }
+  async function pullRemote(){
+    const rows=await rpc("transalp_sync_pull",{p_sync_id:syncId,p_token_hash:syncTokenHash});
+    return Array.isArray(rows)?rows:[];
+  }
+  async function pushRow(row){
+    const enc=await encryptSyncValue(row.value);
+    await rpc("transalp_sync_upsert",{
+      p_sync_id:syncId,p_token_hash:syncTokenHash,p_item_key:row.key,
+      p_ciphertext:enc.ciphertext,p_iv:enc.iv,p_updated_at:row.updatedAt||new Date().toISOString(),
+      p_device_id:getDeviceId()
+    });
+  }
+  function getDeviceId(){
+    const k="transalp-device-id-v1";
+    let id=localStorage.getItem(k);
+    if(!id){id=(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36));localStorage.setItem(k,id)}
+    return id;
+  }
+  async function syncNow({pull=true,refresh=false}={}){
+    if(syncBusy || !syncReady || !db)return;
+    if(!syncConfigured()){setSyncState("local","Lokal","Cloud-Sync noch nicht konfiguriert");return}
+    if(!navigator.onLine){setSyncState("offline","Offline","Offline · lokale Daten bleiben verfügbar");return}
+    syncBusy=true; setSyncState("pending","Sync","Synchronisierung läuft …");
+    let pulledChanges=0, pushed=0;
+    try{
+      const locals=await allSyncRows(); await ensureTimestamps(locals);
+      let remote=[];
+      if(pull || Date.now()-lastFullPull>60000){
+        remote=await pullRemote(); lastFullPull=Date.now();
+      }
+      const remoteMap=new Map((remote||[]).map(r=>[r.item_key,r]));
+      const localMap=new Map((await allSyncRows()).map(r=>[r.key,r]));
+
+      // Pull newer remote values first.
+      for(const rr of remote||[]){
+        const lr=localMap.get(rr.item_key);
+        const rt=new Date(rr.updated_at).getTime();
+        const lt=lr?.updatedAt?new Date(lr.updatedAt).getTime():-1;
+        if(!lr || rt>lt){
+          const value=await decryptSyncValue(rr.iv,rr.ciphertext);
+          const row={key:rr.item_key,value,updatedAt:rr.updated_at};
+          await putSyncRow(row);
+          try{localStorage.setItem(rr.item_key,String(value))}catch(_){}
+          localMap.set(rr.item_key,row); pulledChanges++;
+        }
+      }
+
+      // Push local rows that do not exist remotely or are newer.
+      for(const lr of localMap.values()){
+        const rr=remoteMap.get(lr.key);
+        const lt=lr.updatedAt?new Date(lr.updatedAt).getTime():0;
+        const rt=rr?.updated_at?new Date(rr.updated_at).getTime():-1;
+        if(!rr || lt>rt){await pushRow(lr); pushed++}
+      }
+
+      setSyncState("ok","✓","Synchronisiert · "+new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"}));
+      if(pulledChanges && refresh && current){
+        decoded.delete(current);
+        await openSection(current,true,current==="tour"?currentView:null);
+      }
+    }catch(e){
+      console.error("Transalp sync:",e);
+      setSyncState("error","!","Sync-Fehler · lokale Daten bleiben erhalten");
+    }finally{syncBusy=false}
+  }
+  function scheduleSync(delay=1200,opts={}){
+    clearTimeout(syncTimer);
+    syncTimer=setTimeout(()=>syncNow(opts),delay);
+  }
+
+
+  const $=id=>document.getElementById(id);
+  const toBytes=b64=>Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+  const b64ToText=async payload=>{
+    const iv=toBytes(payload.iv), cipher=toBytes(payload.ciphertext);
+    const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv},derivedKey,cipher);
+    return new TextDecoder().decode(plain);
+  };
+  async function derive(pass){
+    const material=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]);
+    return crypto.subtle.deriveKey(
+      {name:"PBKDF2",salt:toBytes(cryptoMeta.salt),iterations:cryptoMeta.iterations,hash:"SHA-256"},
+      material,{name:"AES-GCM",length:256},false,["decrypt"]
+    );
+  }
+  async function loadEncrypted(name){
+    if(decoded.has(name))return decoded.get(name);
+    const response=await fetch(`./${name}.enc.json`);
+    if(!response.ok)throw new Error("Verschlüsselte App-Datei fehlt");
+    const text=await b64ToText(await response.json());
+    decoded.set(name,text);
+    return text;
+  }
+  const TOUR_VIEWS={
+    tour:{
+      sections:["etappen","energie","abend","tourdaten"],
+      hero:true,sticky:false,start:"etappen",hideHead:"etappen"
+    },
+    preparation:{
+      sections:["reiseinfo","guides-overview","vorbereitung","setup","apps"],
+      hero:true,sticky:false,start:"reiseinfo",hideHead:null
+    },
+    packing:{
+      sections:["vorbereitung-gepaeck"],
+      hero:true,sticky:false,start:"vorbereitung-gepaeck",hideHead:"vorbereitung-gepaeck"
+    },
+    tuning:{
+      sections:["motortuning","finetuning","reifen","akku-modell"],
+      hero:true,sticky:false,start:"reifen",hideHead:null
+    },
+    facts:{
+      sections:["quellen"],
+      hero:true,sticky:false,start:"quellen",hideHead:null
+    },
+    praxis:{
+      sections:["tipps-tricks"],
+      hero:true,sticky:false,start:"tipps-tricks",hideHead:"tipps-tricks"
+    },
+    emergency:{
+      sections:["kontakte"],
+      hero:true,sticky:false,start:"notfall-start",hideHead:"kontakte"
+    }
+  };
+
+  function injectBase(html){
+    return html
+      .replace(/<a class="app-home-link" href="\.\/index\.html">⌂ App<\/a>/g,"")
+      .replace(/<a href="\.\/index\.html" title="Zur App-Startseite">⌂ App<\/a>/g,"");
+  }
+
+  function applyTourView(html,view){
+    const cfg=TOUR_VIEWS[view]||TOUR_VIEWS.tour;
+    const keep=cfg.sections.map(id=>`:not(#${id})`).join("");
+    const hideHead=cfg.hideHead?`#${cfg.hideHead}>.section-head:first-child{display:none!important}`:"";
+    const css=`<style id="shell-view-filter">
+      body>header.hero{display:none!important}
+      body>header.hero[data-shell-view="${view}"]{display:${cfg.hero?"block":"none"}!important}
+      body>nav.view-subnav{display:none!important}
+      body>nav.view-subnav[data-shell-view="${view}"]{display:block!important}
+      body>div.sticky{display:${cfg.sticky?"block":"none"}!important}
+      main>section${keep}{display:none!important}
+      ${hideHead}
+      main{padding-top:0}
+    </style>`;
+    return injectBase(html).replace("</head>",css+"</head>");
+  }
+
+  function revealTopNav(el){
+    try{
+      const row=document.querySelector(".top-actions");
+      if(!row||!el||row.scrollWidth<=row.clientWidth+2)return;
+      const rr=row.getBoundingClientRect(),er=el.getBoundingClientRect();
+      const wanted=row.scrollLeft+(er.left-rr.left)-(row.clientWidth-er.width)/2;
+      const left=Math.max(0,Math.min(row.scrollWidth-row.clientWidth,wanted));
+      row.scrollTo({left,behavior:"auto"});
+    }catch(_){}
+  }
+  function updateMainNav(name,view){
+    const active=id=>{const el=$(id);el?.classList.add("active");if(el)revealTopNav(el)};
+    ["tourBtn","prepBtn","packingBtn","tuningBtn","maintBtn","factsBtn","praxisBtn","emergencyBtn"]
+      .forEach(id=>$(id)?.classList.remove("active"));
+    if(name==="wartung"){active("maintBtn");return}
+    if(name!=="tour")return;
+    const map={
+      tour:"tourBtn",preparation:"prepBtn",packing:"packingBtn",tuning:"tuningBtn",
+      facts:"factsBtn",praxis:"praxisBtn",emergency:"emergencyBtn"
+    };
+    active(map[view]||"tourBtn");
+  }
+  function resetShellTop(){
+    try{
+      const root=document.documentElement,body=document.body;
+      const oldRoot=root.style.scrollBehavior,oldBody=body.style.scrollBehavior;
+      root.style.scrollBehavior="auto";body.style.scrollBehavior="auto";
+      window.scrollTo({top:0,left:0,behavior:"auto"});
+      root.scrollTop=0;root.scrollLeft=0;
+      body.scrollTop=0;body.scrollLeft=0;
+      requestAnimationFrame(()=>{root.style.scrollBehavior=oldRoot;body.style.scrollBehavior=oldBody});
+    }catch(_){}
+  }
+
+  function resetFrameTop(frame){
+    try{
+      const win=frame?.contentWindow,doc=frame?.contentDocument;
+      if(!win||!doc)return;
+      const root=doc.documentElement,body=doc.body;
+      const oldRoot=root.style.scrollBehavior,oldBody=body?.style.scrollBehavior||"";
+      root.style.scrollBehavior="auto";
+      if(body)body.style.scrollBehavior="auto";
+      win.scrollTo({top:0,left:0,behavior:"auto"});
+      root.scrollTop=0;root.scrollLeft=0;
+      if(body){body.scrollTop=0;body.scrollLeft=0}
+      requestAnimationFrame(()=>{
+        root.style.scrollBehavior=oldRoot;
+        if(body)body.style.scrollBehavior=oldBody;
+      });
+    }catch(_){}
+  }
+
+  async function openSection(name,quiet=false,view=null,anchor=null,fromTop=false){
+    if(!derivedKey)return;
+    try{
+      if(!quiet){$("unlockMsg").className="msg";$("unlockMsg").textContent="Entschlüssele lokalen Inhalt …";}
+      const wantedView=name==="tour"?(view||currentView||"tour"):null;
+      const raw=await loadEncrypted(name);
+      const html=name==="tour"?applyTourView(raw,wantedView):injectBase(raw);
+      const frame=$("frame");
+
+      const jump=()=>{
+        try{
+          const doc=frame.contentDocument;
+          const target=fromTop?null:(anchor||((name==="tour"&&wantedView)?TOUR_VIEWS[wantedView]?.start:null));
+          if(fromTop){
+            resetFrameTop(frame);
+            resetShellTop();
+          }else if(target){
+            const el=doc?.getElementById(target);
+            if(el){
+              const win=frame.contentWindow;
+              const top=Math.max(0,(win?.scrollY||0)+el.getBoundingClientRect().top-8);
+              win?.scrollTo({top,left:0,behavior:"auto"});
+            }
+          }else{
+            resetFrameTop(frame);
+          }
+        }catch(_){}
+      };
+
+      if(fromTop)resetShellTop();
+      frame.srcdoc=html;
+      $("lockView").style.display=""; 
+      $("lockView").style.display="none";
+      frame.classList.add("active");
+      current=name;
+      currentView=wantedView;
+      updateMainNav(name,wantedView);
+      frame.addEventListener("load",()=>setTimeout(jump,30),{once:true});
+    }catch(e){
+      decoded.clear();derivedKey=null;
+      $("frame").classList.remove("active");$("lockView").style.display="";
+      $("unlockMsg").className="msg error";$("unlockMsg").textContent="Entsperrcode falsch oder Datei beschädigt.";
+      throw e;
+    }
+  }
+  async function openTourView(view,anchor=null,fromTop=false){
+    if(!derivedKey)return;
+    if(current==="tour"&&currentView===view){
+      try{
+        if(fromTop){
+          resetShellTop();
+          resetFrameTop($("frame"));
+        }else{
+          const target=anchor||TOUR_VIEWS[view]?.start;
+          const frame=$("frame"),win=frame.contentWindow;
+          const el=frame.contentDocument?.getElementById(target);
+          if(el){
+            const top=Math.max(0,(win?.scrollY||0)+el.getBoundingClientRect().top-8);
+            win?.scrollTo({top,left:0,behavior:"smooth"});
+          }
+        }
+      }catch(_){}
+      updateMainNav("tour",view);
+      return;
+    }
+    await openSection("tour",false,view,anchor,fromTop);
+  }
+
+  async function unlock(pass,remember){
+    if(!pass)throw new Error("Entsperrcode fehlt");
+    derivedKey=await derive(pass);
+    await deriveSyncContext(pass);
+    try{await openSection("tour",false,"tour",null,true)}
+    catch(e){derivedKey=null;throw e}
+    if(remember)localStorage.setItem(rememberedKey,pass);
+    else localStorage.removeItem(rememberedKey);
+    scheduleSync(250,{pull:true,refresh:true});
+  }
+
+  $("unlockBtn").addEventListener("click",async()=>{
+    $("unlockBtn").disabled=true;
+    try{await unlock($("code").value.trim(),$("remember").checked)}
+    catch(e){}
+    finally{$("unlockBtn").disabled=false}
+  });
+  $("code").addEventListener("keydown",e=>{if(e.key==="Enter")$("unlockBtn").click()});
+  $("tourBtn").addEventListener("click",()=>openTourView("tour",null,true));
+  $("prepBtn").addEventListener("click",()=>openTourView("preparation",null,true));
+  $("packingBtn").addEventListener("click",()=>openTourView("packing",null,true));
+  $("tuningBtn").addEventListener("click",()=>openTourView("tuning",null,true));
+  $("maintBtn").addEventListener("click",()=>derivedKey?openSection("wartung",false,null,null,true):null);
+  $("factsBtn").addEventListener("click",()=>openTourView("facts",null,true));
+  $("praxisBtn").addEventListener("click",()=>openTourView("praxis",null,true));
+  $("emergencyBtn").addEventListener("click",()=>openTourView("emergency",null,true));
+  $("lockBtn").addEventListener("click",()=>{
+    derivedKey=null;syncKey=null;syncId=null;syncTokenHash=null;syncReady=false;decoded.clear();current=null;currentView=null;$("frame").srcdoc="";$("frame").classList.remove("active");
+    ["tourBtn","prepBtn","packingBtn","tuningBtn","maintBtn","factsBtn","praxisBtn","emergencyBtn"].forEach(id=>$(id)?.classList.remove("active"));$("lockView").style.display="";
+    $("code").value=localStorage.getItem(rememberedKey)||"";
+  });
+
+
+  // Automatic sync triggers: no sync button required.
+  $("frame").addEventListener("load",()=>{
+    try{
+      const doc=$("frame").contentDocument;
+      if(!doc)return;
+      const touch=()=>scheduleSync(1400,{pull:false,refresh:false});
+      doc.addEventListener("change",touch,true);
+      doc.addEventListener("input",()=>scheduleSync(2200,{pull:false,refresh:false}),true);
+      doc.addEventListener("transalp-local-change",()=>scheduleSync(350,{pull:false,refresh:false}),true);
+      doc.addEventListener("click",e=>{
+        if(e.target.closest && (e.target.closest("input,button,select,textarea,details,summary"))) touch();
+      },true);
+    }catch(_){}
+  });
+  window.addEventListener("online",()=>scheduleSync(300,{pull:true,refresh:true}));
+  window.addEventListener("offline",()=>setSyncState("offline","Offline","Offline · lokale Daten bleiben verfügbar"));
+  document.addEventListener("visibilitychange",()=>{
+    if(document.visibilityState==="visible")scheduleSync(250,{pull:true,refresh:true});
+  });
+  setInterval(()=>{ if(syncReady && document.visibilityState==="visible") scheduleSync(0,{pull:(Date.now()-lastFullPull>60000),refresh:false}) },15000);
+
+  // Shared local data backup
+  function openDb(){return new Promise((res,rej)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains(STORE))d.createObjectStore(STORE,{keyPath:"key"})};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+  function allRows(){return new Promise((res,rej)=>{const r=db.transaction(STORE,"readonly").objectStore(STORE).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)})}
+  function putMany(entries){return new Promise((res,rej)=>{const tx=db.transaction(STORE,"readwrite"),s=tx.objectStore(STORE);entries.forEach(([key,value])=>s.put({key,value:String(value),updatedAt:new Date().toISOString()}));tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error)})}
+  function download(name,data){const blob=new Blob([data],{type:"application/json;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+
+  try{db=await openDb();$("dot").classList.add("ok");$("storageStatus").textContent="Gemeinsamer IndexedDB-Speicher bereit"}
+  catch(e){$("storageStatus").textContent="IndexedDB nicht verfügbar";$("dataMsg").textContent=String(e?.message||e)}
+  $("dataBtn").addEventListener("click",()=>$("sheet").classList.add("open"));
+  $("closeSheet").addEventListener("click",()=>$("sheet").classList.remove("open"));
+  $("sheet").addEventListener("click",e=>{if(e.target===$("sheet"))$("sheet").classList.remove("open")});
+  $("forgetCode").addEventListener("click",()=>{localStorage.removeItem(rememberedKey);$("dataMsg").textContent="Gemerkter Entsperrcode wurde von diesem Gerät gelöscht."});
+
+  $("exportAll").addEventListener("click",async()=>{
+    if(!db)return;
+    const rows=(await allRows()).filter(r=>allowed.some(p=>String(r.key).startsWith(p)));
+    const payload={backupType:"transalp-complete-backup",schemaVersion:1,appVersion:"2026-08-27-v64-secure",exportedAt:new Date().toISOString(),storage:Object.fromEntries(rows.map(r=>[r.key,r.value]))};
+    download(`transalp-gesamtsicherung-${new Date().toISOString().slice(0,10)}.json`,JSON.stringify(payload,null,2));
+    $("dataMsg").textContent=`${rows.length} lokale Werte gesichert.`;
+  });
+  const backupFile=$("backupFile");
+  $("importAll").addEventListener("click",()=>backupFile.click());
+  backupFile.addEventListener("change",async()=>{
+    const f=backupFile.files?.[0];if(!f||!db)return;
+    try{
+      const j=JSON.parse(await f.text()),entries=Object.entries(j?.storage||{}).filter(([k])=>allowed.some(p=>k.startsWith(p)));
+      if(!entries.length)throw new Error("Keine passenden Transalp-Daten gefunden");
+      await putMany(entries);entries.forEach(([k,v])=>{try{localStorage.setItem(k,String(v))}catch(_){}});
+      $("dataMsg").textContent=`${entries.length} Werte wiederhergestellt. Öffne den jeweiligen Bereich neu.`;
+    }catch(e){$("dataMsg").textContent=`Wiederherstellung fehlgeschlagen: ${e.message||e}`}
+    finally{backupFile.value=""}
+  });
+
+  cryptoMeta=await (await fetch("./crypto.json")).json();
+  if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
+    navigator.serviceWorker.register("./sw.js").catch(()=>{});
+  }
+  const saved=localStorage.getItem(rememberedKey)||localStorage.getItem("transalp-secure-unlock-v8")||localStorage.getItem("transalp-secure-unlock-v7");
+  if(saved){
+    $("code").value=saved;$("remember").checked=true;localStorage.setItem(rememberedKey,saved);
+    try{await unlock(saved,true)}catch(e){localStorage.removeItem(rememberedKey);$("remember").checked=false}
+  }
+})();
+</script>
+
+<script id="shell-wheel-forward-v51">
+(function(){
+  const topbar=document.querySelector(".topbar");
+  const frame=document.getElementById("frame");
+  if(!topbar||!frame)return;
+  topbar.addEventListener("wheel",function(e){
+    if(!matchMedia("(pointer:fine)").matches)return;
+    if(Math.abs(e.deltaY)<=Math.abs(e.deltaX))return;
+    const win=frame.contentWindow;
+    if(!win||!frame.classList.contains("active"))return;
+    win.scrollBy({top:e.deltaY,left:0,behavior:"auto"});
+    e.preventDefault();
+  },{passive:false});
+})();
+</script>
+
+</body>
+</html>

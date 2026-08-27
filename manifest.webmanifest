@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Transalp 2026 · Tour & Wartung",
+  "short_name": "Transalp",
+  "description": "Offline-App für Tourbegleiter, Tourdaten und Turbo-Levo-Wartungsplan.",
+  "lang": "de",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#123f36",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

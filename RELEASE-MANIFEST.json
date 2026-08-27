@@ -1,0 +1,164 @@
+{
+  "release": "v64",
+  "date": "2026-08-27",
+  "sourceRelease": "v63",
+  "requiredDeploymentFiles": [
+    "QA-LAYOUT-SMOKE-v52.json",
+    "QA-LAYOUT-v53.json",
+    "QA-NAV-STICKY-v53.json",
+    "QA-REGRESSION-CHECKLIST.md",
+    "README-GitHub-Pages.txt",
+    "SUPABASE-SETUP.sql",
+    "crypto.json",
+    "icon-192.png",
+    "icon-512.png",
+    "index.html",
+    "manifest.webmanifest",
+    "northstar-ride-analysis.example.json",
+    "northstar-ride-analysis.schema.json",
+    "qa-browser-capability.json",
+    "qa-regression-matrix.json",
+    "sw.js",
+    "sync-config.js",
+    "tour-01-arlberg.jpg",
+    "tour-02-silvretta.jpg",
+    "tour-03-val-muestair.jpg",
+    "tour-04-livigno.jpg",
+    "tour-05-bernina.jpg",
+    "tour-06-bergell.jpg",
+    "tour.enc.json",
+    "wartung.enc.json",
+    "PROJECT-GUIDELINES.md",
+    "DESIGN-SYSTEM.md",
+    "DATA-MODEL.md",
+    "CHANGELOG.md"
+  ],
+  "forbiddenDeploymentFiles": [
+    "Transalp-Entsperrcode-PRIVAT.txt",
+    "_unlock_candidate_index.txt",
+    "_unlock_value.private",
+    "tour.html",
+    "wartung.html"
+  ],
+  "requiredFileCountExcludingManifest": 29,
+  "files": {
+    "QA-LAYOUT-SMOKE-v52.json": {
+      "bytes": 8927,
+      "sha256": "c9a0e6bbcf2b398ecd16af69b27658e758de88a693c09c88056397bf78330d70"
+    },
+    "QA-LAYOUT-v53.json": {
+      "bytes": 10683,
+      "sha256": "4416d9f00da2cb24178b1781ed25dfb1da8236808603feddae9fe9063c2d0e87"
+    },
+    "QA-NAV-STICKY-v53.json": {
+      "bytes": 7131,
+      "sha256": "4b4575b064780cd183b06d8be3aa7342144c81ed242d227791bb0148efd37dad"
+    },
+    "QA-REGRESSION-CHECKLIST.md": {
+      "bytes": 10394,
+      "sha256": "ce7403508f83619c44d77b63d131a41ba15a7621e2cbcf8e9186dce9b1d9fc68"
+    },
+    "README-GitHub-Pages.txt": {
+      "bytes": 33028,
+      "sha256": "50d2a57a7e3550dbfc98c02bd2653b86d2f2516d62cbd90bb34c6c82fa3886e0"
+    },
+    "SUPABASE-SETUP.sql": {
+      "bytes": 3402,
+      "sha256": "cfac967a2596ee12469172c7ae3a98bff57bba49b3b86d562c05b38c7eca7e41"
+    },
+    "crypto.json": {
+      "bytes": 78,
+      "sha256": "ff77710a184d053b8496fb5be7771132ad058b3219de29f9e08cb28d83a609e5"
+    },
+    "icon-192.png": {
+      "bytes": 1477,
+      "sha256": "1742753de2b8246767223a1bb52e4e053e66d50dfc8168471107b9901b9f8a43"
+    },
+    "icon-512.png": {
+      "bytes": 4243,
+      "sha256": "3b6213e3b1255ed6066aaa3a9dc6738af6c0da9bc7af25fff505e8aa24933bad"
+    },
+    "index.html": {
+      "bytes": 33739,
+      "sha256": "5cf6f12b28f0f5290a024f938020a8cb379520251ae2ae7d55177779518fb9a7"
+    },
+    "manifest.webmanifest": {
+      "bytes": 607,
+      "sha256": "6475be47d01a5eb7e3709a1b45399cf989c06e03c018ed896a51ab3c833b33a3"
+    },
+    "northstar-ride-analysis.example.json": {
+      "bytes": 2508,
+      "sha256": "d9c653de7b51d5ef94972490fa00cd25fbbf43564beaf2e897c5047808985e47"
+    },
+    "northstar-ride-analysis.schema.json": {
+      "bytes": 8483,
+      "sha256": "ee88c9d63a3481f78879fb6d994c7b6f3671cedbafe4b1ebe6b1b22573273fdb"
+    },
+    "qa-browser-capability.json": {
+      "bytes": 136,
+      "sha256": "c2d2117fb94563c766301f1413ce0e230ca1f8a137250c56f353fac162a5465e"
+    },
+    "qa-regression-matrix.json": {
+      "bytes": 1576,
+      "sha256": "1d32f9f805ed3b7d364a907efba266128b9923079036f7594da50a3c75f43d18"
+    },
+    "sw.js": {
+      "bytes": 1944,
+      "sha256": "032b0c8449d0ad269ab242ae8accdd44f38e336f8a140e89280e10fc95b5018b"
+    },
+    "sync-config.js": {
+      "bytes": 371,
+      "sha256": "c4363b74c069846b48103631dbd5f2016d647c7441fa5713d5cfc39fadd78ed1"
+    },
+    "tour-01-arlberg.jpg": {
+      "bytes": 249874,
+      "sha256": "42edb08571489bb5ccc17b90f214564efe47f664f20b062d6071d4c834fc619a"
+    },
+    "tour-02-silvretta.jpg": {
+      "bytes": 266234,
+      "sha256": "8e278356cc5599e70e5aead7c55e193e0fd6814b33a2c6965478e7c034710469"
+    },
+    "tour-03-val-muestair.jpg": {
+      "bytes": 90802,
+      "sha256": "19269ba7f17fa5b72a5978cb710f4fc85df787dba31ea902edcff3d525a2054a"
+    },
+    "tour-04-livigno.jpg": {
+      "bytes": 48653,
+      "sha256": "5c858e215e434c46f3ce5c4337d9dfb9165defbcc5dc435d68e3291ba2948a4c"
+    },
+    "tour-05-bernina.jpg": {
+      "bytes": 179769,
+      "sha256": "3e9b89e65343c71ae4aea45e3418ca66dbc5278d8048cbaea0b46f14dc739f25"
+    },
+    "tour-06-bergell.jpg": {
+      "bytes": 346422,
+      "sha256": "0f337fcb062c66ae806fbb057ce98fd6b5825332dc31a9a413a7567c78e9f19a"
+    },
+    "tour.enc.json": {
+      "bytes": 15379461,
+      "sha256": "a283bd4f2c5cdbf025bc8bd5530afe8f93b3944e93f909cf343767b6356858c1"
+    },
+    "wartung.enc.json": {
+      "bytes": 6870269,
+      "sha256": "59529e842de21eefdd5e3e6dde149984bb52d184cfedbf571dfbecb1dd3340d7"
+    },
+    "PROJECT-GUIDELINES.md": {
+      "bytes": 4164,
+      "sha256": "a7752c415a4d6ec515efc3f92d6c751ff418bd485e1fb6d9057ba5483f17f219"
+    },
+    "DESIGN-SYSTEM.md": {
+      "bytes": 2542,
+      "sha256": "d1b6c703f85a92e8d0dbce5a8e2acff345eee6e6bc987c6634a0e44b4476658e"
+    },
+    "DATA-MODEL.md": {
+      "bytes": 1908,
+      "sha256": "9e24a6ccf947699f17bbb618b34793c30b65fc4d016282c973ace4786545b3f5"
+    },
+    "CHANGELOG.md": {
+      "bytes": 3620,
+      "sha256": "d50bf19df4a65fb0b975625ebfaf4454dcad77ecfe59c59f053747fc3c86309c"
+    }
+  },
+  "releaseVersion": "v64",
+  "sourceBaseVersion": "v63"
+}

@@ -1,0 +1,608 @@
+{
+  "version": "v53",
+  "passed": true,
+  "failures": [],
+  "results": [
+    {
+      "viewport": "desktop-large",
+      "view": "tour",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 579,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 829,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "preparation",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 979,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1229,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "packing",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 901,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 901,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "tuning",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 1051,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1301,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "facts",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 1451,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1701,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "praxis",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 1851,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2101,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "emergency",
+      "cw": 1440,
+      "heroLeft": 140,
+      "heroRight": 1300,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 2251,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2501,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "tour",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 2737,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2987,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "preparation",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 3137,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3387,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "packing",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 1070,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1070,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "tuning",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 1220,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1470,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "facts",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 1620,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1870,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "praxis",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 2020,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2270,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "emergency",
+      "cw": 1024,
+      "heroLeft": 24,
+      "heroRight": 1000,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 2420,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2670,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "tour",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 2820,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3070,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "preparation",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 3220,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3470,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "packing",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 2025,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2025,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "tuning",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 2175,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2425,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "facts",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 2575,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2825,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "praxis",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 2975,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3225,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "emergency",
+      "cw": 390,
+      "heroLeft": 12,
+      "heroRight": 378,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 3375,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3625,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "tour",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 3622,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3872,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "preparation",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 4022,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 4272,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "packing",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 1788,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 1788,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "tuning",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 1938,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2188,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "facts",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 2338,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2588,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "praxis",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 2738,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 2988,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "emergency",
+      "cw": 430,
+      "heroLeft": 12,
+      "heroRight": 418,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 3138,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3388,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-large",
+      "view": "wartung",
+      "cw": 1440,
+      "mainLeft": 140,
+      "mainRight": 1300,
+      "s1": {
+        "x": 0,
+        "y": 3538,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 3788,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "desktop-compact",
+      "view": "wartung",
+      "cw": 1024,
+      "mainLeft": 24,
+      "mainRight": 1000,
+      "s1": {
+        "x": 0,
+        "y": 4303,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 4553,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-standard",
+      "view": "wartung",
+      "cw": 390,
+      "mainLeft": 12,
+      "mainRight": 378,
+      "s1": {
+        "x": 0,
+        "y": 4703,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 4953,
+        "top": 0
+      }
+    },
+    {
+      "viewport": "iphone-max",
+      "view": "wartung",
+      "cw": 430,
+      "mainLeft": 12,
+      "mainRight": 418,
+      "s1": {
+        "x": 0,
+        "y": 4755,
+        "top": 0
+      },
+      "s2": {
+        "x": 0,
+        "y": 5005,
+        "top": 0
+      }
+    }
+  ],
+  "note": "Visible layout bounds and sticky transition tested; nested scrollable content is intentionally not treated as page overflow."
+}

@@ -1,0 +1,6 @@
+{
+  "chromium": "/usr/bin/chromium",
+  "chromium-browser": null,
+  "google-chrome": null,
+  "playwright": "/opt/pyvenv/bin/playwright"
+}

@@ -1,0 +1,70 @@
+{
+  "version": "v60",
+  "viewports": [
+    {
+      "name": "desktop-large",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "desktop-compact",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "iphone-standard",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "iphone-max",
+      "width": 430,
+      "height": 932
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "desktop-wide",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "views": [
+    "tour",
+    "vorbereitung",
+    "gepaeck",
+    "tuning",
+    "wartung",
+    "daten",
+    "tipps",
+    "notfall"
+  ],
+  "assertions": [
+    "no-horizontal-page-overflow",
+    "vertical-scroll-works",
+    "top-nav-reachable",
+    "sub-nav-reachable",
+    "active-button-correct",
+    "page-switch-top",
+    "content-gutters-consistent",
+    "images-contained",
+    "secondary-nav-sticks-after-hero",
+    "secondary-nav-remains-sticky-while-content-scrolls",
+    "subnav-click-keeps-document-scrollX-zero",
+    "normal-contact-icons-monochrome-green",
+    "emergency-phone-icons-red-only",
+    "tire-visual-text-no-overlap",
+    "maintenance-uses-canonical-wheel-visual",
+    "sram-calibration-block-no-overflow",
+    "sram-link-grouped-with-slider",
+    "preparation-tire-three-column-no-intraword-break",
+    "grip2-dial-centered-on-card-axis",
+    "sram-slider-scale-uninterrupted",
+    "sram-weight-right-of-slider",
+    "sram-link-separate-row-below-slider",
+    "tuning-tire-scenarios-unchanged-from-v59"
+  ]
+}
