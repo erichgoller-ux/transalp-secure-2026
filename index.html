@@ -100,7 +100,7 @@ body{display:flex;flex-direction:column}
 <body>
 <div class="shell">
 <header class="topbar">
-<div class="brand">⛰ <span>Transalp 2026</span><small class="versiontag">v64</small></div>
+<div class="brand">⛰ <span>Transalp 2026</span><small class="versiontag">v65</small></div>
 <div aria-label="Globale Navigation" class="top-actions"><button class="navbtn" id="tourBtn" title="Tagesetappen, FIT-Nacharbeit und Scorecard" type="button">Tour</button><button class="navbtn" id="prepBtn" title="Tourüberblick, Guides, Checklisten und finales Setup" type="button">Vorbereitung</button><button class="navbtn" id="packingBtn" title="Pack- und Gepäcklisten" type="button">Gepäck</button><button class="navbtn" id="tuningBtn" title="Kennlinien, Fahrwerk, Reifen und Verbrauchsmodell" type="button">Tuning</button><button class="navbtn" id="maintBtn" title="Wartungsplan" type="button">Wartung</button><button class="navbtn quickjump" id="factsBtn" title="Daten &amp; Fakten" type="button">Daten</button><button class="navbtn quickjump" id="praxisBtn" title="Praxishilfe" type="button">Tipps</button><button class="navbtn quickjump emergencyjump" id="emergencyBtn" title="Notfall &amp; Assistance" type="button">Notfall</button><span class="syncpill local" id="syncPill" title="Datensynchronisation">Lokal</span><button aria-label="Lokale Datenbank und Sicherung" class="iconbtn dbbtn" id="dataBtn" title="Lokale Datenbank &amp; Sicherung" type="button">DB</button><button class="iconbtn" id="lockBtn" title="Sperren" type="button">⌁</button></div></header>
 <main class="stage">
 <section class="lock" id="lockView">
@@ -572,7 +572,7 @@ body{display:flex;flex-direction:column}
   $("exportAll").addEventListener("click",async()=>{
     if(!db)return;
     const rows=(await allRows()).filter(r=>allowed.some(p=>String(r.key).startsWith(p)));
-    const payload={backupType:"transalp-complete-backup",schemaVersion:1,appVersion:"2026-08-27-v64-secure",exportedAt:new Date().toISOString(),storage:Object.fromEntries(rows.map(r=>[r.key,r.value]))};
+    const payload={backupType:"transalp-complete-backup",schemaVersion:1,appVersion:"2026-08-28-v65-secure",exportedAt:new Date().toISOString(),storage:Object.fromEntries(rows.map(r=>[r.key,r.value]))};
     download(`transalp-gesamtsicherung-${new Date().toISOString().slice(0,10)}.json`,JSON.stringify(payload,null,2));
     $("dataMsg").textContent=`${rows.length} lokale Werte gesichert.`;
   });

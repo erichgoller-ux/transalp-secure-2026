@@ -1,7 +1,7 @@
 {
-  "release": "v64",
-  "date": "2026-08-27",
-  "sourceRelease": "v63",
+  "release": "v65",
+  "date": "2026-08-28",
+  "sourceRelease": "v64",
   "requiredDeploymentFiles": [
     "QA-LAYOUT-SMOKE-v52.json",
     "QA-LAYOUT-v53.json",
@@ -35,10 +35,12 @@
   ],
   "forbiddenDeploymentFiles": [
     "Transalp-Entsperrcode-PRIVAT.txt",
+    "Transalp-Entsperrcode-v64-PRIVAT.txt",
     "_unlock_candidate_index.txt",
     "_unlock_value.private",
     "tour.html",
-    "wartung.html"
+    "wartung.html",
+    "SOURCE.zip"
   ],
   "requiredFileCountExcludingManifest": 29,
   "files": {
@@ -80,7 +82,7 @@
     },
     "index.html": {
       "bytes": 33739,
-      "sha256": "5cf6f12b28f0f5290a024f938020a8cb379520251ae2ae7d55177779518fb9a7"
+      "sha256": "4ab7ad2fdb45c60d0212b47538659e39f36ce79304ee29cb388b8d6470916c2b"
     },
     "manifest.webmanifest": {
       "bytes": 607,
@@ -104,7 +106,7 @@
     },
     "sw.js": {
       "bytes": 1944,
-      "sha256": "032b0c8449d0ad269ab242ae8accdd44f38e336f8a140e89280e10fc95b5018b"
+      "sha256": "8bbe4e2dcbd47731c1b4e3ac34f56c4dd102af34460279f7c400f93984eab246"
     },
     "sync-config.js": {
       "bytes": 371,
@@ -135,8 +137,8 @@
       "sha256": "0f337fcb062c66ae806fbb057ce98fd6b5825332dc31a9a413a7567c78e9f19a"
     },
     "tour.enc.json": {
-      "bytes": 15379461,
-      "sha256": "a283bd4f2c5cdbf025bc8bd5530afe8f93b3944e93f909cf343767b6356858c1"
+      "bytes": 15387010,
+      "sha256": "8680c4c1912f5bbab45865955a937f01d6df1616df42ae09d6b33df13c7c391a"
     },
     "wartung.enc.json": {
       "bytes": 6870269,
@@ -155,10 +157,10 @@
       "sha256": "9e24a6ccf947699f17bbb618b34793c30b65fc4d016282c973ace4786545b3f5"
     },
     "CHANGELOG.md": {
-      "bytes": 3620,
-      "sha256": "d50bf19df4a65fb0b975625ebfaf4454dcad77ecfe59c59f053747fc3c86309c"
+      "bytes": 4224,
+      "sha256": "46991529412e27ef618a5ba02abe4d1736e49d032238bbc22e2a08c484362f60"
     }
   },
-  "releaseVersion": "v64",
-  "sourceBaseVersion": "v63"
+  "releaseVersion": "v65",
+  "sourceBaseVersion": "v64"
 }

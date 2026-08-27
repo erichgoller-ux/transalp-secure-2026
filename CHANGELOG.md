@@ -1,3 +1,10 @@
+## v65 · Vorbereitung-Routenübersicht und getrennte Gabelregler
+
+- Vorbereitung: Routenkette über die volle Inhaltsbreite erweitert; die sechs Abschnittsbreiten folgen proportional dem Mittelwert der Distanzen beider Varianten.
+- Für jede Etappe werden Distanz und Höhenmeter von Variante I und II direkt zwischen Start- und Zielort angezeigt.
+- Rücktransfer am Sonntag ergänzt: Bus vom Comer See nach St. Anton, Abfahrt 8:30–9:00 Uhr und Ankunft gegen 13:00 Uhr.
+- Fahrwerks-Kompaktübersicht konsistent auf fünf Kacheln erweitert: Gabel HSC, LSC, HSR und LSR getrennt sowie FLOAT X separat.
+
 ## v64 · Security-Recovery
 
 - Privaten Entsperrcode nach versehentlicher Veröffentlichung rotiert.

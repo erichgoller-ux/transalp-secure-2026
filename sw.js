@@ -1,4 +1,4 @@
-const CACHE="transalp-secure-v64-20260827";
+const CACHE="transalp-secure-v65-20260828";
 const APP=["./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png","./crypto.json","./tour.enc.json","./wartung.enc.json","./sync-config.js","./northstar-ride-analysis.schema.json","./northstar-ride-analysis.example.json",
   "./tour-01-arlberg.jpg",
   "./tour-02-silvretta.jpg",
