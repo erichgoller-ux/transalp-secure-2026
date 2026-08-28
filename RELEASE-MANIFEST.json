@@ -1,7 +1,7 @@
 {
-  "release": "v65",
+  "release": "v66",
   "date": "2026-08-28",
-  "sourceRelease": "v64",
+  "sourceRelease": "v65",
   "requiredDeploymentFiles": [
     "QA-LAYOUT-SMOKE-v52.json",
     "QA-LAYOUT-v53.json",
@@ -39,6 +39,7 @@
     "_unlock_candidate_index.txt",
     "_unlock_value.private",
     "tour.html",
+    "tour.roundtrip.html",
     "wartung.html",
     "SOURCE.zip"
   ],
@@ -82,7 +83,7 @@
     },
     "index.html": {
       "bytes": 33739,
-      "sha256": "4ab7ad2fdb45c60d0212b47538659e39f36ce79304ee29cb388b8d6470916c2b"
+      "sha256": "fff3e89a44f399ca1c1a07ec516f084f42a55303f8243d69f8c738fe56610b78"
     },
     "manifest.webmanifest": {
       "bytes": 607,
@@ -106,7 +107,7 @@
     },
     "sw.js": {
       "bytes": 1944,
-      "sha256": "8bbe4e2dcbd47731c1b4e3ac34f56c4dd102af34460279f7c400f93984eab246"
+      "sha256": "6add31d0ee2453038b66e519bb1d6017964aef4e61ec21796a49048e32117bd4"
     },
     "sync-config.js": {
       "bytes": 371,
@@ -137,8 +138,8 @@
       "sha256": "0f337fcb062c66ae806fbb057ce98fd6b5825332dc31a9a413a7567c78e9f19a"
     },
     "tour.enc.json": {
-      "bytes": 15387010,
-      "sha256": "8680c4c1912f5bbab45865955a937f01d6df1616df42ae09d6b33df13c7c391a"
+      "bytes": 15387090,
+      "sha256": "27847b8d17c31ae6ccecf2a5d912942b68ea0889170143275e90411327c4781f"
     },
     "wartung.enc.json": {
       "bytes": 6870269,
@@ -157,10 +158,10 @@
       "sha256": "9e24a6ccf947699f17bbb618b34793c30b65fc4d016282c973ace4786545b3f5"
     },
     "CHANGELOG.md": {
-      "bytes": 4224,
-      "sha256": "46991529412e27ef618a5ba02abe4d1736e49d032238bbc22e2a08c484362f60"
+      "bytes": 4796,
+      "sha256": "79eb152d426a2f255c596ab63c0ba13a02f731478a354099dad4782462ec27c1"
     }
   },
-  "releaseVersion": "v65",
-  "sourceBaseVersion": "v64"
+  "releaseVersion": "v66",
+  "sourceBaseVersion": "v65"
 }

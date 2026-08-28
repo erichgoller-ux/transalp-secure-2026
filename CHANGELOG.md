@@ -1,3 +1,10 @@
+## v66 · Routenstrahl und kompakter Reiseabschluss repariert
+
+- Rechten Endpunkt des Streckenstrahls innerhalb der Kartenbreite fixiert und den funktionslosen Endpfeil entfernt.
+- Erklaerhinweis zur proportionalen Abschnittsbreite aus der sichtbaren Oberflaeche entfernt.
+- Ueberzaehlige CSS-Klammer beseitigt, damit Veranstalter, Reise, Gruppe und Tourseiten-Link wieder in der kompakten Desktop-Zeile statt in hohen Einzelbloecken erscheinen.
+- Vollstaendige Vorbereitung-Seitenhoehe sowie Desktop- und Mobil-Breakpoints als verbindlichen Regressionstest aufgenommen.
+
 ## v65 · Vorbereitung-Routenübersicht und getrennte Gabelregler
 
 - Vorbereitung: Routenkette über die volle Inhaltsbreite erweitert; die sechs Abschnittsbreiten folgen proportional dem Mittelwert der Distanzen beider Varianten.
