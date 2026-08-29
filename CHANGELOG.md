@@ -1,3 +1,13 @@
+## v68 · FLOAT-X-Regler eindeutig dargestellt
+
+Die FLOAT-X-Darstellung auf die zwei real getrennten Einzelregler korrigiert: LSC blau als Druckstufe und Rebound rot als Zugstufe. Im Fahrwerks-Tuning beide Dämpferregler ergänzt, farblich eindeutig ausgezeichnet und die jeweilige Funktion analog zur Gabel beschriftet.
+
+- FLOAT X in Tour- und Wartungsansicht mit je einem einfachen blauen und roten Regler statt Doppelring dargestellt.
+- Tuning-Übersicht um die fehlende blaue FLOAT-X-LSC-Karte ergänzt; Dämpferkarten rechts neben den vier Gabelkarten angeordnet.
+- Druckstufe und Zugstufe mit Drehrichtung und Wirkung direkt an allen sechs Tuning-Karten benannt.
+- Responsive Raster für sechs Karten auf Desktop sowie drei, zwei oder eine Karte auf schmaleren Ansichten ergänzt.
+- Payloads mit neuem Salt und frischen IVs verschlüsselt; Sicherheits-Gate erneut ausgeführt.
+
 ## v67 · Fahrwerksbaseline auf reales Bike-Setup aktualisiert
 
 FOX 36 GRIP2 und FLOAT X auf die am Bike real gezählten Klickbereiche und die abgestimmte Transalp-Baseline aktualisiert; Trail-Feintuning ergänzt. Verschlüsselte Payloads neu erzeugt, Sicherheits-Gate bestanden.
