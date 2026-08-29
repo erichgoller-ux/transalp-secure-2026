@@ -1,3 +1,14 @@
+## v71 · Fahrwerkskarten wieder kompakt ausgerichtet
+
+Die drei Fahrwerkskarten stehen auf breiten Displays wieder kompakt nebeneinander. Ausschließlich die Reglerdarstellung wurde stabilisiert: Jeder Ring ist mittig ausgerichtet, die Drehrichtungshinweise stehen darunter und erzeugen keine schmale, umbrechende Seitenspalte.
+
+- Kompakte Dreierspalte auf breiten Displays; einspaltig unter 1.080 px.
+- Ringe innerhalb jeder Karte exakt zentriert.
+- Zwei Richtungshinweise unter dem Ring; auf sehr schmalen Displays einspaltig.
+- Kein horizontaler Überlauf bei lokal geprüften 844 und 1.440 px Viewportbreite.
+- FLOAT-X-LSC weiterhin durchgehend als blauer Ring dargestellt.
+- Payloads neu verschlüsselt und Sicherheits-Gate bestanden.
+
 ## v70 · Fahrwerkskarten robust untereinander angeordnet
 
 Die fehleranfällige Mehrspaltenlösung vollständig entfernt. Gabel-Kompression, Gabel-Rebound und FLOAT X stehen jetzt jeweils in einer eigenen vollen Zeile. Regler und Drehrichtung sind nicht mehr in eine schmale Seitenspalte gezwängt; die Richtungshinweise stehen in breiten Feldern unter dem Regler.
