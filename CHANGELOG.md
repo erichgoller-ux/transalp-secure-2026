@@ -1,3 +1,12 @@
+## v72 · Richtungsfelder unter den Ringen fixiert
+
+Die kompakte Dreierspalte bleibt unverändert. Eine ältere, spezifischere Layoutregel wurde gezielt überschrieben, sodass die beiden Richtungsfelder nun zuverlässig unter dem jeweils zentrierten Ring stehen.
+
+- Keine Änderung an Kartenbreite, Inhalt oder Architektur.
+- Ringmitte rechnerisch und im Browserbild geprüft.
+- Richtungsfelder jeweils 157 px breit statt schmaler Seitenspalten.
+- Payloads neu verschlüsselt und Sicherheits-Gate bestanden.
+
 ## v71 · Fahrwerkskarten wieder kompakt ausgerichtet
 
 Die drei Fahrwerkskarten stehen auf breiten Displays wieder kompakt nebeneinander. Ausschließlich die Reglerdarstellung wurde stabilisiert: Jeder Ring ist mittig ausgerichtet, die Drehrichtungshinweise stehen darunter und erzeugen keine schmale, umbrechende Seitenspalte.
