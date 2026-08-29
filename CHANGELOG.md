@@ -1,3 +1,14 @@
+## v70 · Fahrwerkskarten robust untereinander angeordnet
+
+Die fehleranfällige Mehrspaltenlösung vollständig entfernt. Gabel-Kompression, Gabel-Rebound und FLOAT X stehen jetzt jeweils in einer eigenen vollen Zeile. Regler und Drehrichtung sind nicht mehr in eine schmale Seitenspalte gezwängt; die Richtungshinweise stehen in breiten Feldern unter dem Regler.
+
+- Drei große Fahrwerkskarten dauerhaft untereinander angeordnet.
+- Regler jeder Karte zentriert und Richtungshinweise darunter platziert.
+- Zwei breite Richtungsfelder; auf sehr schmalen Displays automatischer Wechsel auf eine Spalte.
+- Kein horizontaler Überlauf bei lokal geprüften 390, 844 und 1.440 px Viewportbreite.
+- FLOAT-X-LSC lokal als blauer Ring gerendert und per berechnetem Farbwert geprüft.
+- Payloads neu verschlüsselt und Sicherheits-Gate bestanden.
+
 ## v69 · FLOAT-X-LSC durchgehend blau und Kartenraster stabilisiert
 
 Den FLOAT-X-LSC-Regler in allen Fahrwerks- und Tuning-Darstellungen konsequent als blauen Einzelring ausgezeichnet. Das Raster der drei großen Fahrwerkskarten auf eine verfügbare-breitenabhängige Anordnung umgestellt, damit die Dämpferkarte nicht mehr gequetscht oder seitlich abgeschnitten wird.
