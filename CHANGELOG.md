@@ -1,3 +1,13 @@
+## v69 · FLOAT-X-LSC durchgehend blau und Kartenraster stabilisiert
+
+Den FLOAT-X-LSC-Regler in allen Fahrwerks- und Tuning-Darstellungen konsequent als blauen Einzelring ausgezeichnet. Das Raster der drei großen Fahrwerkskarten auf eine verfügbare-breitenabhängige Anordnung umgestellt, damit die Dämpferkarte nicht mehr gequetscht oder seitlich abgeschnitten wird.
+
+- Gelb/orange Darstellung des FLOAT-X-LSC im Szenario „Nasse Wurzeln“ entfernt und durch den einheitlichen blauen Ring ersetzt.
+- Große Fahrwerkskarten verwenden jetzt ein automatisch umbrechendes Raster mit belastbarer Mindestbreite.
+- Lange Richtungsbegriffe dürfen innerhalb der Hinweiskarten sauber umbrechen.
+- Tour- und Wartungsansicht auf dieselbe Rasterlogik abgeglichen.
+- Payloads neu verschlüsselt und Sicherheits-Gate erneut bestanden.
+
 ## v68 · FLOAT-X-Regler eindeutig dargestellt
 
 Die FLOAT-X-Darstellung auf die zwei real getrennten Einzelregler korrigiert: LSC blau als Druckstufe und Rebound rot als Zugstufe. Im Fahrwerks-Tuning beide Dämpferregler ergänzt, farblich eindeutig ausgezeichnet und die jeweilige Funktion analog zur Gabel beschriftet.
