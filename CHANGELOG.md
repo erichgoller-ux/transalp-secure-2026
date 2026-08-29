@@ -1,3 +1,12 @@
+## v67 · Fahrwerksbaseline auf reales Bike-Setup aktualisiert
+
+FOX 36 GRIP2 und FLOAT X auf die am Bike real gezählten Klickbereiche und die abgestimmte Transalp-Baseline aktualisiert; Trail-Feintuning ergänzt. Verschlüsselte Payloads neu erzeugt, Sicherheits-Gate bestanden.
+
+- FOX 36: 86 psi, 30–32 mm beziehungsweise 19–20 % SAG; HSC 6/8, LSC 12/16, HSR 3/8 und LSR 5/15, jeweils von CLOSED offen.
+- FLOAT X: 15,5–16 mm beziehungsweise 28–29 % SAG; LSC 5/6 offen (1 Klick von OPEN Richtung CLOSED) und Rebound 7/13 von CLOSED offen.
+- Trail-Regeln abgeglichen: bei erkennbarem Packing zuerst LSR 5/15 → 6/15; bei zu viel Bremsnicken oder zu wenig Plattform LSC 12/16 → 11/16; immer nur einen Parameter gleichzeitig ändern.
+- Neuer zufälliger 16-Byte-PBKDF2-Salt und frische 12-Byte-GCM-IVs; PBKDF2-SHA256 bleibt bei 250.000 Iterationen.
+
 ## v66 · Routenstrahl und kompakter Reiseabschluss repariert
 
 - Rechten Endpunkt des Streckenstrahls innerhalb der Kartenbreite fixiert und den funktionslosen Endpfeil entfernt.

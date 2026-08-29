@@ -1,7 +1,7 @@
 {
-  "release": "v66",
-  "date": "2026-08-28",
-  "sourceRelease": "v65",
+  "release": "v67",
+  "date": "2026-08-29",
+  "sourceRelease": "v66",
   "requiredDeploymentFiles": [
     "QA-LAYOUT-SMOKE-v52.json",
     "QA-LAYOUT-v53.json",
@@ -41,7 +41,10 @@
     "tour.html",
     "tour.roundtrip.html",
     "wartung.html",
-    "SOURCE.zip"
+    "SOURCE.zip",
+    "Transalp-Secure-PWA-2026-08-29-v67-SOURCE.zip",
+    "Transalp-Entsperrcode-v64-PRIVAT(1).txt",
+    "wartung.roundtrip.html"
   ],
   "requiredFileCountExcludingManifest": 29,
   "files": {
@@ -70,8 +73,8 @@
       "sha256": "cfac967a2596ee12469172c7ae3a98bff57bba49b3b86d562c05b38c7eca7e41"
     },
     "crypto.json": {
-      "bytes": 78,
-      "sha256": "ff77710a184d053b8496fb5be7771132ad058b3219de29f9e08cb28d83a609e5"
+      "bytes": 77,
+      "sha256": "54a02c84eb9106b00416ddecb85c2c01f011fafc29db64b8e836e89ac80e3ab5"
     },
     "icon-192.png": {
       "bytes": 1477,
@@ -83,7 +86,7 @@
     },
     "index.html": {
       "bytes": 33739,
-      "sha256": "fff3e89a44f399ca1c1a07ec516f084f42a55303f8243d69f8c738fe56610b78"
+      "sha256": "98c0b7a640f83e5af7a9cf30f9fe710ef9d284e6bdac2312170d069f8d40b068"
     },
     "manifest.webmanifest": {
       "bytes": 607,
@@ -107,7 +110,7 @@
     },
     "sw.js": {
       "bytes": 1944,
-      "sha256": "6add31d0ee2453038b66e519bb1d6017964aef4e61ec21796a49048e32117bd4"
+      "sha256": "c8425f05f3aea41e62634c7ccf288f772872f1e5f468163109c06ea3f3c6afaf"
     },
     "sync-config.js": {
       "bytes": 371,
@@ -138,12 +141,12 @@
       "sha256": "0f337fcb062c66ae806fbb057ce98fd6b5825332dc31a9a413a7567c78e9f19a"
     },
     "tour.enc.json": {
-      "bytes": 15387090,
-      "sha256": "27847b8d17c31ae6ccecf2a5d912942b68ea0889170143275e90411327c4781f"
+      "bytes": 15387681,
+      "sha256": "3903fd31fe17ec63c54e27aa2ad9d336a0610afcfd839422270452e0e5a59d92"
     },
     "wartung.enc.json": {
-      "bytes": 6870269,
-      "sha256": "59529e842de21eefdd5e3e6dde149984bb52d184cfedbf571dfbecb1dd3340d7"
+      "bytes": 6870649,
+      "sha256": "9a5d147ec975f6b27e6d6ab75da31af76bb308c4995f5f8b96b009067cb2ae7e"
     },
     "PROJECT-GUIDELINES.md": {
       "bytes": 4164,
@@ -158,10 +161,10 @@
       "sha256": "9e24a6ccf947699f17bbb618b34793c30b65fc4d016282c973ace4786545b3f5"
     },
     "CHANGELOG.md": {
-      "bytes": 4796,
-      "sha256": "79eb152d426a2f255c596ab63c0ba13a02f731478a354099dad4782462ec27c1"
+      "bytes": 5655,
+      "sha256": "f12aa57cd6e4cd54f050fbe61f8c1882c0f59df1078aa98de571e14b703b907e"
     }
   },
-  "releaseVersion": "v66",
-  "sourceBaseVersion": "v65"
+  "releaseVersion": "v67",
+  "sourceBaseVersion": "v66"
 }
