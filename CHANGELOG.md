@@ -1,3 +1,12 @@
+## v73 · Drehmomentreferenz für das konkrete Bike erweitert
+
+Die bisher arbeitsbezogene Drehmomenttabelle wurde gegen die erarbeitete Bike-Liste und die Herstellerunterlagen geprüft. Ergänzt wurden eine kompakte Kurzliste und eine nach Baugruppen sortierte Langliste für das Turbo Levo Comp Carbon Gen 3 (2023) mit Hope Carbon-Lenker, Code RSC, FOX 36 und FLOAT X.
+
+- Vorderachse konkret mit 9 Nm dokumentiert; abweichende Achskopf-Gravur hat Vorrang.
+- Cockpit, Akku, Bremsanlage, Antrieb, Hinterbau und Rahmen vollständig gruppiert.
+- Direkter Link zum deutschen Specialized-Levo-Handbuch und zur 2023er Modellseite.
+- Payloads neu verschlüsselt und Sicherheits-Gate bestanden.
+
 ## v72 · Richtungsfelder unter den Ringen fixiert
 
 Die kompakte Dreierspalte bleibt unverändert. Eine ältere, spezifischere Layoutregel wurde gezielt überschrieben, sodass die beiden Richtungsfelder nun zuverlässig unter dem jeweils zentrierten Ring stehen.
